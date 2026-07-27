@@ -1,0 +1,8 @@
+{
+    "preview": {
+        "title": "Gulp Builder",
+        "src": "./assets/images/starter.png",
+        "alt": "Logotype"
+    },
+    "test": [{ "title": "test" }]
+}

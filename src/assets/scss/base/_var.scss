@@ -1,0 +1,22 @@
+@use 'media' as *;
+@use 'mixins' as *;
+
+$system-ff:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif;
+
+$container_wdth: #{rem(1430px)};
+$container_pdd: #{rem(12px)};
+
+:root {
+}
+
+@include media('tablet') {
+    :root {
+    }
+}
+
+@include media('mobile') {
+    :root {
+    }
+}

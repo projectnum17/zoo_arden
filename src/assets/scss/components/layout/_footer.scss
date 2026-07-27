@@ -1,0 +1,12 @@
+@use '../../base/var' as *;
+@use '../../base/mixins' as *;
+@use '../../base/media' as *;
+
+footer {
+    padding-block: rem(24px);
+    font-size: rem(32px);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

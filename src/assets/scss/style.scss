@@ -1,0 +1,5 @@
+@use './base/mixins' as *;
+@use 'base';
+@use 'components';
+
+// if u need use libs -> create libs.scss in root and @use this
