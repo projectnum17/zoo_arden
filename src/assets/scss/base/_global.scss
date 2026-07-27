@@ -10,14 +10,13 @@ body {
     font-weight: 400;
     font-size: rem(16px);
     line-height: 130%;
-    font-family: $system-ff;
+    font-family: $ff_base, $system-ff;
     min-height: 100vh;
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
-    background: #000;
-    color: #fff;
-    @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    background: $bg_body;
+    color: $c_text;
 
     &.is-locked {
         overflow: hidden;

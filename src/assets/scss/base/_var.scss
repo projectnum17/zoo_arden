@@ -1,22 +1,35 @@
 @use 'media' as *;
 @use 'mixins' as *;
 
+$ff_base: 'Arial', sans-serif;
+$ff_sec: 'Helvetica', sans-serif;
 $system-ff:
     -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
     Arial, sans-serif;
 
-$container_wdth: #{rem(1430px)};
-$container_pdd: #{rem(12px)};
+$container_wdth: #{rem(1800px)};
+
+$bg_body: #f3f7ee;
+
+$c_text: #000000;
+$c_accent: #d96529;
+$c_orange: #f0b034;
+$c_white: #ffffff;
+$c_green: #0d8118;
+
+$gr_accent: linear-gradient(
+    93.74deg,
+    #d96529 -11.33%,
+    #f0b034 55.71%,
+    #db6b2a 121.46%
+);
 
 :root {
-}
-
-@include media('tablet') {
-    :root {
-    }
+    --container_pdd: #{rem(20px)};
 }
 
 @include media('mobile') {
     :root {
+        --container_pdd: #{rem(12px)};
     }
 }

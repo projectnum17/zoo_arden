@@ -8,4 +8,6 @@
     }
 }
 
-// @include font-face('Roboto', 'Roboto-Regular', 400, normal);
+@include font-face('Arial', 'ff_base_400', 400, normal);
+@include font-face('Arial', 'ff_base_700', 700, normal);
+@include font-face('Helvetica', 'ff_sec_700', 700, normal);
