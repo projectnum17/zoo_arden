@@ -1,0 +1,29 @@
+<section class="animals">
+    <div class="container">
+        <h2 class="section-subtitle">Познайомтеся з нашими звірями</h2>
+        <div class="bend-slider js-bend-slider">
+            <div class="bend-slider swiper">
+                <div class="bend-slider__wrapper swiper-wrapper">
+                    {{#each animals.data}}
+                    <div class="bend-slider__slide swiper-slide">
+                        {{> _animalBox this}}
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            <div class="bend-slider__controls">
+                <button type="button" class="js-bend-prev bend-slider__btn">
+                    <svg>
+                        <use href="./assets/images/icons/svg/sprite.svg#icoArrowR"></use>
+                    </svg>
+                </button>
+                <div class="bend-slider__pag js-bend-pag"></div>
+                <button type="button" class="js-bend-next bend-slider__btn">
+                    <svg>
+                        <use href="./assets/images/icons/svg/sprite.svg#icoArrowR"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

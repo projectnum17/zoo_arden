@@ -1,0 +1,52 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.animal-box {
+    max-width: rem(421px);
+    aspect-ratio: 421 / 535;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: rem(40px);
+    color: $c_white;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            360deg,
+            rgba(0, 0, 0, 0.5) 0%,
+            rgba(0, 0, 0, 0) 100%
+        );
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 2;
+        width: 100%;
+        gap: rem(11px);
+        padding: rem(46px) rem(54px);
+    }
+
+    &__title {
+        font: 700 #{rem(40px)} / 100% $ff_sec;
+        text-transform: uppercase;
+    }
+
+    &__info {
+        font: 400 #{rem(18px)} / 100% $ff_base;
+    }
+}

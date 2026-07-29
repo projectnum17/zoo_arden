@@ -1,0 +1,27 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.donation {
+    padding-block: rem(275px);
+    position: relative;
+
+    &__content {
+        border-radius: rem(20px);
+        backdrop-filter: blur(10px);
+        padding: rem(20px);
+        max-width: rem(967px);
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: rem(30px);
+        align-items: center;
+        text-align: center;
+    }
+
+    &__headline {
+        font: 700 #{rem(24px)} / 100% $ff_base;
+        text-transform: uppercase;
+        color: $c_accent;
+    }
+}

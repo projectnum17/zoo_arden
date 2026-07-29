@@ -1,0 +1,19 @@
+@use '../../base/var' as *;
+@use '../../base/mixins' as *;
+@use '../../base/media' as *;
+
+.link-primary {
+    font: 700 #{rem(20px)} / 100% $ff_base;
+    text-transform: uppercase;
+    padding: rem(25px) rem(30px);
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: $bg_body;
+    background: $gr_accent;
+    @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    @include hover {
+        transform: scale(0.99);
+    }
+}

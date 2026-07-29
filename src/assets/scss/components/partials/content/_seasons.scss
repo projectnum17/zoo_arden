@@ -1,0 +1,58 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.seasons {
+    overflow: hidden;
+    position: relative;
+    padding-block: rem(170px) 0;
+
+    .section-subtitle {
+        text-align: center;
+        margin-bottom: rem(93px);
+    }
+
+    .container {
+        max-width: rem(2100px);
+    }
+
+    .bg-brach {
+        max-width: 80%;
+        top: -15%;
+
+        &--l {
+            left: -40%;
+        }
+
+        &--r {
+            right: -40%;
+            transform: scaleX(-1);
+        }
+    }
+
+    &__container {
+        max-width: rem(2560.98px);
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__boxes {
+        padding-inline: var(--container_pdd);
+        padding-bottom: rem(220px);
+        display: flex;
+        gap: rem(70px);
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        .season-box {
+            flex-shrink: 0;
+            scroll-snap-align: center;
+        }
+    }
+}

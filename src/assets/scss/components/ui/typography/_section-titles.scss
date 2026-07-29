@@ -1,0 +1,13 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.section-title {
+    font: 700 #{rem(100px)} / 100% $ff_sec;
+    text-transform: uppercase;
+}
+
+.section-subtitle {
+    font: 700 #{rem(70px)} / 100% $ff_sec;
+    text-transform: uppercase;
+}

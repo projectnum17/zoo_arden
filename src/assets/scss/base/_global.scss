@@ -42,3 +42,13 @@ a {
 *:after {
     -webkit-tap-highlight-color: transparent;
 }
+
+section {
+    max-width: rem(2560.98px);
+    margin: 0 auto;
+    width: 100%;
+}
+
+section.charity + section {
+    padding-top: 0;
+}

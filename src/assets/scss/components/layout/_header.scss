@@ -3,4 +3,48 @@
 @use '../../base/media' as *;
 
 .header {
+    max-width: rem(1920px);
+    padding-inline: rem(5px);
+    position: fixed;
+    top: rem(30px);
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    z-index: 5;
+    @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    &.is-transform {
+        transform: translate(-50%, calc(-100% - #{rem(30px)}));
+    }
+
+    &.is-colored {
+        top: rem(10px);
+        .header__content {
+            background: $c_white;
+        }
+        .header__logo {
+            filter: brightness(0);
+        }
+    }
+
+    .container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: rem(24px);
+    }
+
+    &__content {
+        padding-block: rem(17px);
+        border-radius: rem(122px);
+        @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+
+    &__logo {
+        max-width: rem(119px);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        img {
+            width: 100%;
+        }
+    }
 }

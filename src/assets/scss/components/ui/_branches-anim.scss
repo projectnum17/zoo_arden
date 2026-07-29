@@ -1,0 +1,73 @@
+@use '../../base/var' as *;
+@use '../../base/mixins' as *;
+@use '../../base/media' as *;
+
+.bg-brach {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+
+    img {
+        transform-origin: 0% 100%;
+        animation: wind-sway 10s ease-in-out infinite;
+        will-change: transform;
+    }
+}
+
+@keyframes wind-sway {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: rotate(0.4deg);
+    }
+
+    20% {
+        transform: rotate(-0.3deg);
+    }
+
+    30% {
+        transform: rotate(0.5deg);
+    }
+
+    38% {
+        transform: rotate(2.5deg) scale(1.005);
+    }
+
+    43% {
+        transform: rotate(-1deg);
+    }
+
+    48% {
+        transform: rotate(0.8deg);
+    }
+
+    58% {
+        transform: rotate(0.2deg);
+    }
+
+    66% {
+        transform: rotate(-0.4deg);
+    }
+
+    74% {
+        transform: rotate(0.3deg);
+    }
+
+    82% {
+        transform: rotate(4deg) scale(1.01);
+    }
+
+    87% {
+        transform: rotate(-1.5deg);
+    }
+
+    92% {
+        transform: rotate(0.7deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}

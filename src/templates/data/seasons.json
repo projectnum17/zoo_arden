@@ -1,0 +1,8 @@
+{
+    "data": [
+        { "picture": "./assets/images/season_1.png", "title": "зима" },
+        { "picture": "./assets/images/season_2.png", "title": "весна" },
+        { "picture": "./assets/images/season_3.png", "title": "Літо" },
+        { "picture": "./assets/images/season_4.png", "title": "Осінь" }
+    ]
+}

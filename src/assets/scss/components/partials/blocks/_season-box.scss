@@ -1,0 +1,44 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.season-box {
+    max-width: rem(421px);
+    aspect-ratio: 421 / 535;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: rem(40px);
+    font: 700 #{rem(40px)} / 100% $ff_sec;
+    text-transform: uppercase;
+    color: $c_white;
+
+    &::after {
+        content: '';
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(
+            360deg,
+            rgba(0, 0, 0, 0.5) 0%,
+            rgba(0, 0, 0, 0) 100%
+        );
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__title {
+        position: absolute;
+        z-index: 2;
+        padding: rem(30px);
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+    }
+}

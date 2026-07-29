@@ -1,0 +1,18 @@
+<section class="seasons">
+    <div class="container">
+        <h2 class="section-subtitle">Працюємо у всі сезони</h2>
+    </div>
+    <div class="seasons__container">
+        <div class="seasons__boxes">
+            {{#each seasons.data}}
+            {{> _seasonBox this}}
+            {{/each}}
+        </div>
+    </div>
+    <div class="bg-brach bg-brach--l">
+        <img src="./assets/images/icons/bg-branch_2.svg" alt="">
+    </div>
+    <div class="bg-brach bg-brach--r">
+        <img src="./assets/images/icons/bg-branch_2.svg" alt="">
+    </div>
+</section>

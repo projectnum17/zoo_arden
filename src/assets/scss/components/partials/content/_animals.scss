@@ -1,0 +1,11 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.animals {
+    padding-block: rem(115px) rem(136px);
+    .section-subtitle {
+        text-align: center;
+        margin-bottom: rem(80px);
+    }
+}
