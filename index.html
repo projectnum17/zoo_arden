@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Site Name | Arden</title>
+        <meta name="description" content="Site Name | Arden">
+        <link rel="shortcut icon" href="./assets/images/favicon/favicon.png" type="image/png" />
+        <link rel="preload" href="./assets/fonts/ff_sec_700.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="./assets/fonts/ff_base_400.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="./assets/fonts/ff_base_700.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="./assets/css/libs.min.css">
+        <link rel="stylesheet" href="./assets/css/style.min.css">
+        <script defer src="./assets/js/libs.min.js"></script>
+        <script defer src="./assets/js/app.min.js"></script>
+    </head>
+
+    <body>
+        <header class="header js-header">
+            <div class="header__content">
+                <div class="container">
+                    <a href="index.html" class="header__logo">
+                        <img src="./assets/images/icons/logo.png" alt="Logo">
+                    </a>
+                    <a href="tel:+380673134400" class="cta cta--lg">+38 (067) 313-44-00</a>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+
+            <section class="hero">
+                <div class="container">
+                    <div class="hero__content">
+                        <h1 class="section-title">Відкрийте світ дикої природи</h1>
+                        <div class="schedule-box js-schedule-box">
+                            <button type="button" class="schedule-box__close js-schedule-close">
+                                <svg>
+                                    <use href="./assets/images/icons/svg/sprite.svg#icoClose"></use>
+                                </svg>
+                            </button>
+                            <div class="schedule-box__head">
+                                <svg>
+                                    <use href="./assets/images/icons/svg/sprite.svg#icoClock"></use>
+                                </svg>
+                                <p class="schedule-box__text">Сьогодні</p>
+                                <span class="schedule-box__time">10:00–17:00</span>
+                            </div>
+                            <div class="schedule-box__content">
+                                <p class="schedule-box__text schedule-box__text--underline">весь графік</p>
+                                <ul class="schedule-box__list">
+                                    <li class="schedule-box__item">
+                                        <p class="schedule-box__subtext">дорослий</p>
+                                        <p class="schedule-box__price">400</p>
+                                        <p class="schedule-box__subtext">грн</p>
+                                    </li>
+                                    <li class="schedule-box__item">
+                                        <p class="schedule-box__subtext">дитячий</p>
+                                        <p class="schedule-box__price">300</p>
+                                        <p class="schedule-box__subtext">грн</p>
+                                        <p class="schedule-box__label">6-14 років</p>
+                                    </li>
+                                    <li class="schedule-box__item">
+                                        <p class="schedule-box__subtext">до 6 років</p>
+                                        <p class="schedule-box__price">0</p>
+                                        <p class="schedule-box__subtext">грн</p>
+                                        <p class="schedule-box__label">безкоштовно</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-layer">
+                    <video muted autoplay loop playsinline class="js-video-bg" poster="./assets/video/poster.jpg">
+                        <source data-src="./assets/video/hero.mp4" type="video/mp4">
+                        <p>Your browser does not support the video tag.</p>
+                    </video>
+                </div>
+            </section>
+            <section class="charity">
+                <div class="container">
+                    <div class="charity__content">
+                        <div class="charity__pic">
+                            <img loading="lazy" decoding="async" src="./assets/images/bear.png" alt="Picture">
+                        </div>
+                        <div class="charity__details">
+                            <img loading="lazy" decoding="async" src="./assets/images/icons/branch.svg" alt="Icon">
+                            <div class="charity__txts">
+                                <h2>
+                                    Ми даруємо врятованим тваринам другий шанс і знайомимо людей із дикою природою.
+                                </h2>
+                                <p>
+                                    <span>
+                                        Park Arden — це більше, ніж парк. Це безпечний дім для тварин, які потребують турботи, та
+                                        місце,
+                                        де
+                                        кожен відвідувач може відчути справжній зв'язок із природою.
+                                    </span>
+                                </p>
+                                <p>
+                                    У нашому парку мешкають врятовані тварини, які отримали нове життя завдяки небайдужим людям. Під
+                                    час
+                                    екскурсії ви познайомитеся з їхніми історіями, дізнаєтеся більше про їхні звички та побачите, як
+                                    любов і турбота можуть змінити долю кожної живої істоти.
+                                </p>
+                            </div>
+                            <a href="javascript: void(0)" class="link-primary">Благодійний внесок</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-brach bg-brach--l">
+                    <img src="./assets/images/icons/bg-branch_1.svg" alt="">
+                </div>
+                <div class="bg-brach bg-brach--r">
+                    <img src="./assets/images/icons/bg-branch_1.svg" alt="">
+                </div>
+            </section>
+            <section class="animals">
+                <div class="container">
+                    <h2 class="section-subtitle">Познайомтеся з нашими звірями</h2>
+                    <div class="bend-slider js-bend-slider">
+                        <div class="bend-slider swiper">
+                            <div class="bend-slider__wrapper swiper-wrapper">
+                                <div class="bend-slider__slide swiper-slide">
+                                    <div class="animal-box js-rotate-card">
+                                        <img src="./assets/images/animal_1.png" alt="Picture">
+                                        <div class="animal-box__content">
+                                            <p class="animal-box__title">Беркут</p>
+                                            <p class="animal-box__info">Один із найбільших хижих птахів Європи. Має надзвичайно гострий зір, силу та вражаючу майстерність польоту.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bend-slider__slide swiper-slide">
+                                    <div class="animal-box js-rotate-card">
+                                        <img src="./assets/images/animal_2.png" alt="Picture">
+                                        <div class="animal-box__content">
+                                            <p class="animal-box__title">Вовк</p>
+                                            <p class="animal-box__info">Розумний, уважний і надзвичайно соціальний хижак. Вовки демонструють силу командної роботи та сімейних зв&#x27;язків.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bend-slider__slide swiper-slide">
+                                    <div class="animal-box js-rotate-card">
+                                        <img src="./assets/images/animal_3.png" alt="Picture">
+                                        <div class="animal-box__content">
+                                            <p class="animal-box__title">Тигр</p>
+                                            <p class="animal-box__info">Один із найбільших представників родини котячих. Вражає своєю силою, грацією та впевненою ходою.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bend-slider__slide swiper-slide">
+                                    <div class="animal-box js-rotate-card">
+                                        <img src="./assets/images/animal_4.png" alt="Picture">
+                                        <div class="animal-box__content">
+                                            <p class="animal-box__title">Лев</p>
+                                            <p class="animal-box__info">Величний хижак і справжній символ сили. Леви живуть прайдами та відомі своєю відданістю родині.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bend-slider__slide swiper-slide">
+                                    <div class="animal-box js-rotate-card">
+                                        <img src="./assets/images/animal_5.png" alt="Picture">
+                                        <div class="animal-box__content">
+                                            <p class="animal-box__title">Білий тигр</p>
+                                            <p class="animal-box__info">Рідкісний різновид тигра з унікальним білим забарвленням. Спокійний, могутній і неймовірно красивий.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bend-slider__controls">
+                            <button type="button" class="js-bend-prev bend-slider__btn">
+                                <svg>
+                                    <use href="./assets/images/icons/svg/sprite.svg#icoArrowR"></use>
+                                </svg>
+                            </button>
+                            <div class="bend-slider__pag js-bend-pag"></div>
+                            <button type="button" class="js-bend-next bend-slider__btn">
+                                <svg>
+                                    <use href="./assets/images/icons/svg/sprite.svg#icoArrowR"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="reviews">
+                <div class="container">
+                    <div class="reviews__content">
+                        <div class="reviews__head">
+                            <svg>
+                                <use href="./assets/images/icons/svg/sprite.svg#icoQuote"></use>
+                            </svg>
+                            <h2 class="section-subtitle">Відгуки</h2>
+                        </div>
+                        <div class="reviews__slider js-reviews-slider">
+                            <div class="reviews__answers swiper">
+                                <div class="reviews__wrapper swiper-wrapper">
+                                    <div class="reviews__slide swiper-slide">
+                                        <div class="reviews__answer">
+                                            <p>
+                                                Неймовірне місце, де відчувається справжня турбота про тварин. Дуже сподобалося, що екскурсоводи не просто проводять екскурсію, а розповідають історії кожного мешканця парку. Обов'язково приїдемо ще!"
+                                            </p>
+                                            <p>Олена К.</p>
+                                        </div>
+                                    </div>
+                                    <div class="reviews__slide swiper-slide">
+                                        <div class="reviews__answer">
+                                            <p>
+                                                Неймовірне місце, де відчувається справжня турбота про тварин. Дуже сподобалося, що екскурсоводи не просто проводять екскурсію, а розповідають історії кожного мешканця парку. Обов'язково приїдемо ще!"
+                                            </p>
+                                            <p>Олена К.</p>
+                                        </div>
+                                    </div>
+                                    <div class="reviews__slide swiper-slide">
+                                        <div class="reviews__answer">
+                                            <p>
+                                                Неймовірне місце, де відчувається справжня турбота про тварин. Дуже сподобалося, що екскурсоводи не просто проводять екскурсію, а розповідають історії кожного мешканця парку. Обов'язково приїдемо ще!"
+                                            </p>
+                                            <p>Олена К.</p>
+                                        </div>
+                                    </div>
+                                    <div class="reviews__slide swiper-slide">
+                                        <div class="reviews__answer">
+                                            <p>
+                                                Неймовірне місце, де відчувається справжня турбота про тварин. Дуже сподобалося, що екскурсоводи не просто проводять екскурсію, а розповідають історії кожного мешканця парку. Обов'язково приїдемо ще!"
+                                            </p>
+                                            <p>Олена К.</p>
+                                        </div>
+                                    </div>
+                                    <div class="reviews__slide swiper-slide">
+                                        <div class="reviews__answer">
+                                            <p>
+                                                Неймовірне місце, де відчувається справжня турбота про тварин. Дуже сподобалося, що екскурсоводи не просто проводять екскурсію, а розповідають історії кожного мешканця парку. Обов'язково приїдемо ще!"
+                                            </p>
+                                            <p>Олена К.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reviews__pag js-reviews-pag"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-layer">
+                    <img src="./assets/images/tiger.png" alt="">
+                </div>
+            </section>
+            <section class="seasons">
+                <div class="container">
+                    <h2 class="section-subtitle">Працюємо у всі сезони</h2>
+                </div>
+                <div class="seasons__container">
+                    <div class="seasons__boxes">
+                        <div class="season-box js-rotate-card">
+                            <img src="./assets/images/season_1.png" alt="">
+                            <p class="season-box__title">зима</p>
+                        </div>
+                        <div class="season-box js-rotate-card">
+                            <img src="./assets/images/season_2.png" alt="">
+                            <p class="season-box__title">весна</p>
+                        </div>
+                        <div class="season-box js-rotate-card">
+                            <img src="./assets/images/season_3.png" alt="">
+                            <p class="season-box__title">Літо</p>
+                        </div>
+                        <div class="season-box js-rotate-card">
+                            <img src="./assets/images/season_4.png" alt="">
+                            <p class="season-box__title">Осінь</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-brach bg-brach--l">
+                    <img src="./assets/images/icons/bg-branch_2.svg" alt="">
+                </div>
+                <div class="bg-brach bg-brach--r">
+                    <img src="./assets/images/icons/bg-branch_2.svg" alt="">
+                </div>
+            </section>
+            <section class="donation">
+                <div class="container">
+                    <div class="donation__content">
+                        <p class="donation__headline">КОЖЕН ВІЗИТ — ЦЕ ДОПОМОГА</p>
+                        <h2 class="section-subtitle">Станьте частиною доброї справи</h2>
+                        <a href="javascript: void(0)" class="cta">Зробити внесок</a>
+                    </div>
+                </div>
+                <div class="bg-layer">
+                    <img src="./assets/images/bg-donat.png" alt="">
+                </div>
+            </section>
+            <section class="information">
+                <div class="container">
+                    <h2 class="section-subtitle">Інформація для відвідувачів</h2>
+                    <div class="information__head">
+                        <div class="info-card info-card--schedules">
+                            <p class="info-card__title">ГРАФІК РОБОТИ
+                                <br> ПАРКУ
+                            </p>
+                            <div class="info-card__boxes">
+                                <div class="info-card__schedule u-light">
+                                    <p class="info-card__text">Пн–Пт</p>
+                                    <div class="info-card__hours">
+                                        <span>10:00</span>
+                                        <span>17:00</span>
+                                    </div>
+                                    <p class="info-card__text">щогодини</p>
+                                </div>
+                                <div class="info-card__schedule u-light">
+                                    <p class="info-card__text">Сб–Нд</p>
+                                    <div class="info-card__hours">
+                                        <span>10:00</span>
+                                        <span>18:00</span>
+                                    </div>
+                                    <p class="info-card__text">щогодини</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-card info-card--details">
+                            <p class="info-card__title">Екскурсії за попереднім замовленням</p>
+                            <div class="info-card__reminder u-light">
+                                <p>
+                                    Якщо ви плануєте завітати до нас групою 15–25 осіб (з однокласниками, колегами чи друзями), щоб поспостерігати за нашими хижаками, дізнатися більше про їхнє життя та отримати цікаву інформацію від наших фахівців, пропонуємо екскурсію в супроводі окремого екскурсовода без очікування в черзі.
+                                </p>
+                            </div>
+                            <p class="info-card__subtitle">Потрібна попередня реєстрація за 1 день!</p>
+                        </div>
+                        <div class="info-card info-card--prices">
+                            <p class="info-card__title">ВАРТІСТЬ
+                                <br> ВІДВІДУВАННЯ
+                            </p>
+                            <div class="info-card__boxes">
+                                <div class="info-card__price u-light">
+                                    <p class="info-card__text">дорослий</p>
+                                    <span class="info-card__cost">400</span>
+                                    <p class="info-card__text">грн</p>
+                                </div>
+                                <div class="info-card__price u-light">
+                                    <p class="info-card__text">дитячий</p>
+                                    <span class="info-card__cost">300</span>
+                                    <p class="info-card__text">грн</p>
+                                    <p class="info-card__label">6-14 років</p>
+                                </div>
+                                <div class="info-card__price u-light">
+                                    <p class="info-card__text">до 6 років</p>
+                                    <span class="info-card__cost">0</span>
+                                    <p class="info-card__text">грн</p>
+                                    <p class="info-card__label">безкоштовно</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="information__foot">
+                        <div class="info-card info-card--badge">
+                            <img loading="lazy" decoding="async" src="./assets/images/icons/info_1.png" alt="Icon">
+                            <p>
+                                Екскурсії щогодини або вільне відвідування - обирайте зручний формат.
+                            </p>
+                        </div>
+                        <div class="information__connect">
+                            <a href="tel:+380673134400" class="information__phone">+38 (067) 313-44-00</a>
+                            <a href="javascript: void(0)" class="cta">Записатись</a>
+                        </div>
+                        <div class="info-card info-card--badge">
+                            <img loading="lazy" decoding="async" src="./assets/images/icons/info_2.png" alt="Icon">
+                            <p>
+                                З міркувань безпеки вхід до парку з домашніми тваринами заборонено. Дякуємо за розуміння!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-layer">
+                    <img src="./assets/images/bg-forest.svg" alt="">
+                </div>
+            </section>
+            <section class="tour">
+                <div class="container">
+                    <div class="tour__map">
+                        <img loading="lazy" decoding="async" src="./assets/images/map.png" alt="Map">
+                    </div>
+                    <div class="tour__includes">
+                        <div class="tour__logo">
+                            <img loading="lazy" decoding="async" src="./assets/images/icons/logo.png" alt="Logo">
+                        </div>
+                        <ul class="tour__list">
+                            <li>
+                                <img loading="lazy" decoding="async" src="./assets/images/icons/ico_tour_1.png" alt="Icon">
+                                <p>Дикі тварини</p>
+                            </li>
+                            <li>
+                                <img loading="lazy" decoding="async" src="./assets/images/icons/ico_tour_2.png" alt="Icon">
+                                <p>Оглядовий міст-галерея</p>
+                            </li>
+                            <li>
+                                <img loading="lazy" decoding="async" src="./assets/images/icons/ico_tour_3.png" alt="Icon">
+                                <p>Прогулянкові маршрути</p>
+                            </li>
+                            <li>
+                                <img loading="lazy" decoding="async" src="./assets/images/icons/ico_tour_4.png" alt="Icon">
+                                <p>Фотозони</p>
+                            </li>
+                            <li>
+                                <img loading="lazy" decoding="async" src="./assets/images/icons/ico_tour_5.png" alt="Icon">
+                                <p>Кафе</p>
+                            </li>
+                            <li>
+                                <img loading="lazy" decoding="async" src="./assets/images/icons/ico_tour_6.png" alt="Icon">
+                                <p>Зона відпочинку</p>
+                            </li>
+                            <li>
+                                <img loading="lazy" decoding="async" src="./assets/images/icons/ico_tour_7.png" alt="Icon">
+                                <p>Власна парковка</p>
+                            </li>
+                            <li>
+                                <img loading="lazy" decoding="async" src="./assets/images/icons/ico_tour_8.png" alt="Icon">
+                                <p>Екскурсійний супровід</p>
+                            </li>
+                        </ul>
+                        <a download href="./assets/images/map.png" class="cta">Завантажити мапу</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__details">
+                    <div class="footer__handlers">
+                        <ul class="footer__socials">
+                            <li>
+                                <a target="_blank" href="javascript: void(0)">
+                                    <svg>
+                                        <use href="./assets/images/icons/svg/sprite.svg#icoYouTube"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="javascript: void(0)">
+                                    <svg>
+                                        <use href="./assets/images/icons/svg/sprite.svg#icoTT"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="javascript: void(0)">
+                                    <svg>
+                                        <use href="./assets/images/icons/svg/sprite.svg#icoInst"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                        <button type="button" class="footer__anchor js-to-top">
+                            <svg>
+                                <use href="./assets/images/icons/svg/sprite.svg#icoArrow"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="footer__info">
+                        <p class="footer__title">Як нас знайти?</p>
+                        <div class="footer__address">
+                            <p class="footer__subtitle">Адреса</p>
+                            <p class="footer__connect">вул. Курортна, Сатанів, Хмельницька область</p>
+                            <a target="_blank" href="javascript: void(0)" class="footer__road">
+                                прокласти маршрут
+                                <svg>
+                                    <use href="./assets/images/icons/svg/sprite.svg#icoArrowR"></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="footer__contacts">
+                            <div class="footer__contact">
+                                <p class="footer__subtitle">Телефон</p>
+                                <a href="tel:+380673134400" class="footer__connect">+38 (067) 313-44-00</a>
+                            </div>
+                            <div class="footer__contact">
+                                <p class="footer__subtitle">E-mail</p>
+                                <a href="mailto:info@parkarden.com.ua" class="footer__connect">
+                                    info@parkarden.com.ua
+                                </a>
+                            </div>
+                        </div>
+                        <div class="footer__legals">
+                            <a target="_blank" href="javascript: void(0)">
+                                Публічна оферта
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__bg">
+                    <img loading="lazy" decoding="async" src="./assets/images/bg-bear.svg" alt="">
+                </div>
+            </div>
+            <div class="footer__terms">
+                <div class="container">
+                    <div class="footer__copy">
+                        <p>© 2026 Park Arden. Усі права захищені.</p>
+                    </div>
+                    <div class="footer__by">
+                        <p>DESIGN AND DEVELOP BY <a target="_blank" href="javascript: void(0)">ESFIRUM</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+
+</html>
