@@ -99,6 +99,8 @@ svg * {
 }
 
 :root {
+  --header_gap: 1.875rem;
+  --header_h: 7.25rem;
   --container_pdd: 1.25rem;
 }
 
@@ -148,6 +150,7 @@ body.is-locked {
 }
 
 main {
+  min-height: 50vh;
   flex: 1;
 }
 
@@ -316,14 +319,18 @@ section:has(.bg-layer) {
 }
 
 .header {
+  display: flex;
+  align-items: center;
   max-width: 120rem;
   padding-inline: 0.3125rem;
   position: fixed;
-  top: 1.875rem;
+  top: var(--header_gap);
   left: 50%;
   transform: translate(-50%, 0);
   width: 100%;
   z-index: 5;
+  color: #f3f7ee;
+  min-height: var(--header_h);
   transition: all 0.5s cubic-bezier(0.768, 0.304, 0.496, 0.884);
 }
 
@@ -332,6 +339,7 @@ section:has(.bg-layer) {
 }
 
 .header.is-colored {
+  color: #000000;
   top: 0.625rem;
 }
 
@@ -352,18 +360,24 @@ section:has(.bg-layer) {
 }
 
 .header__content {
+  width: 100%;
   padding-block: 1.0625rem;
   border-radius: 7.625rem;
   transition: all 0.5s cubic-bezier(0.768, 0.304, 0.496, 0.884);
 }
 
 .header__logo {
+  filter: brightness(0);
   max-width: 7.4375rem;
   transition: all 0.3s cubic-bezier(0.768, 0.304, 0.496, 0.884);
 }
 
 .header__logo img {
   width: 100%;
+}
+
+.header--transparent .header__logo {
+  filter: none;
 }
 
 .footer > .container {
@@ -1050,6 +1064,169 @@ section:has(.bg-layer) {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
+}
+
+.shelter {
+  padding-block: calc(5.625rem + var(--header_h) + var(--header_gap)) 7.375rem;
+}
+
+.shelter .section-title {
+  text-align: center;
+  margin-bottom: 6.875rem;
+}
+
+.shelter__content {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.shelter__details {
+  display: flex;
+  flex-direction: column;
+  gap: 6.9375rem;
+  padding-top: 3.75rem;
+  max-width: 47.9375rem;
+}
+
+.shelter__pic {
+  max-height: calc(100vh - var(--header_h));
+  max-height: calc(100svh - var(--header_h));
+  max-width: 53rem;
+  width: 100%;
+  aspect-ratio: 848/888;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 1.875rem;
+}
+
+.shelter__pic img {
+  transform: scale(1.05);
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.shelter__txts {
+  margin-bottom: 3.125rem;
+  font: 400 1.125rem/100% "Arial", sans-serif;
+  color: rgba(0, 0, 0, 0.5019607843);
+}
+
+.shelter__txts h2,
+.shelter__txts h3,
+.shelter__txts h4,
+.shelter__txts h5,
+.shelter__txts h6 {
+  font: 700 3.75rem/100% "Helvetica", sans-serif;
+  text-transform: uppercase;
+  margin: 0 0 1.5rem 0;
+  color: #000000;
+}
+
+.shelter__txts *:last-child {
+  margin-bottom: 0;
+}
+
+.shelter__txts ol,
+.shelter__txts ul {
+  margin: 0 0 1.5rem 0;
+}
+
+.shelter__txts a {
+  text-decoration: underline;
+  color: #d96529;
+}
+
+.shelter__info *:last-child {
+  margin-bottom: 0;
+}
+
+.shelter__list {
+  --pic-width: 3rem;
+  font: 400 1.5rem/124% "Arial", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 3.125rem;
+  margin-bottom: 3.125rem;
+}
+
+.shelter__list--acc {
+  gap: 2.5rem;
+}
+
+.shelter__list span {
+  font-weight: 700;
+  color: #d96529;
+}
+
+.shelter__list li:has(img) {
+  padding-left: calc(var(--pic-width) + 1.25rem);
+  position: relative;
+}
+
+.shelter__list li img {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  mix-blend-mode: multiply;
+  width: var(--pic-width);
+  height: 2.6875rem;
+}
+
+.shelter__headline {
+  font: 700 1.875rem/124% "Arial", sans-serif;
+  margin-bottom: 3.125rem;
+  color: #d96529;
+}
+
+.shelter .cta {
+  min-width: 14.375rem;
+  text-transform: capitalize;
+}
+
+.shelter .cta span {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.shelter .cta span svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.shelter .cta span:nth-child(2),
+.shelter .cta span:nth-child(3) {
+  display: none;
+}
+
+.shelter .cta.is-copied {
+  pointer-events: none;
+}
+
+.shelter .cta.is-copied span:nth-child(1) {
+  display: none;
+}
+
+.shelter .cta.is-copied span:nth-child(2) {
+  display: flex;
+}
+
+.shelter .cta.is-error {
+  pointer-events: none;
+  background: red;
+}
+
+.shelter .cta.is-error span:nth-child(1),
+.shelter .cta.is-error span:nth-child(2) {
+  display: none;
+}
+
+.shelter .cta.is-error span:nth-child(3) {
+  display: flex;
 }
 
 .schedule-box {
