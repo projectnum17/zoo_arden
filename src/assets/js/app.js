@@ -194,6 +194,43 @@ const initReviewsSliders = () => {
     });
 };
 
+const initCopyInfo = () => {
+    const copyBtn = document.querySelector('.js-copy-trigger');
+    const copyList = document.querySelector('.js-copy-list');
+
+    if (!copyBtn || !copyList) return;
+
+    let timeoutId = null;
+
+    copyBtn.addEventListener('click', async () => {
+        const textToCopy = Array.from(copyList.querySelectorAll('[data-copy]'))
+            .map((item) => item.dataset.copy.trim())
+            .filter(Boolean)
+            .join('\n');
+
+        if (timeoutId) clearTimeout(timeoutId);
+        copyBtn.classList.remove('is-copied', 'is-error');
+
+        try {
+            await navigator.clipboard.writeText(textToCopy);
+
+            copyBtn.classList.add('is-copied');
+
+            timeoutId = setTimeout(() => {
+                copyBtn.classList.remove('is-copied');
+            }, 2000);
+        } catch (err) {
+            console.error('Ошибка копирования:', err);
+
+            copyBtn.classList.add('is-error');
+
+            timeoutId = setTimeout(() => {
+                copyBtn.classList.remove('is-error');
+            }, 2000);
+        }
+    });
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     initHeader();
     initVideoAutoplay();
@@ -202,4 +239,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initBendSliders();
     initReviewsSliders();
     initRotateBlocks();
+    initCopyInfo();
 });

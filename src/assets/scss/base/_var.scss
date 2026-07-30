@@ -26,6 +26,8 @@ $gr_accent: linear-gradient(
 );
 
 :root {
+    --header_gap: #{rem(30px)};
+    --header_h: #{rem(116px)};
     --container_pdd: #{rem(20px)};
 }
 
