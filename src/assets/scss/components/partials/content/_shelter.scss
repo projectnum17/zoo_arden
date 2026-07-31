@@ -6,15 +6,28 @@
     padding-block: calc(#{rem(90px)} + var(--header_h) + var(--header_gap))
         #{rem(118px)};
 
+    @include media('mobile') {
+        padding-block: calc(var(--header_h) + #{rem(56px)}) rem(56px);
+    }
+
     .section-title {
         text-align: center;
         margin-bottom: rem(110px);
+        @include media('laptop') {
+            margin-bottom: rem(56px);
+        }
+        @include media('mobile') {
+            margin-bottom: rem(24px);
+        }
     }
 
     &__content {
         display: flex;
         justify-content: space-between;
         gap: rem(24px);
+        @include media('tablet') {
+            flex-direction: column;
+        }
     }
 
     &__details {
@@ -23,6 +36,15 @@
         gap: rem(111px);
         padding-top: rem(60px);
         max-width: rem(767px);
+        @include media('desktop') {
+            padding-top: 0;
+        }
+        @include media('laptop') {
+            gap: rem(56px);
+        }
+        @include media('tablet') {
+            max-width: 100%;
+        }
     }
 
     &__pic {
@@ -41,12 +63,23 @@
             height: 100%;
             object-fit: cover;
         }
+        @include media('tablet') {
+            max-width: 100%;
+            max-height: calc(100vh - var(--header_h) - #{rem(50px)});
+            max-height: calc(100svh - var(--header_h) - #{rem(50px)});
+        }
     }
 
     &__txts {
         margin-bottom: rem(50px);
         font: 400 #{rem(18px)} / 100% $ff_base;
         color: #00000080;
+
+        @include media('mobile') {
+            font-size: rem(16px);
+            margin-bottom: rem(24px);
+        }
+
         h2,
         h3,
         h4,
@@ -56,6 +89,16 @@
             text-transform: uppercase;
             margin: 0 0 rem(24px) 0;
             color: $c_text;
+            @include media('laptop') {
+                font-size: rem(42px);
+            }
+            @include media('tablet') {
+                font-size: rem(34px);
+            }
+            @include media('mobile') {
+                font-size: rem(24px);
+                margin: 0 0 rem(16px) 0;
+            }
         }
         *:last-child {
             margin-bottom: 0;
@@ -84,9 +127,25 @@
         flex-direction: column;
         gap: rem(50px);
         margin-bottom: rem(50px);
+        @include media('laptop') {
+            gap: rem(24px);
+            margin-bottom: rem(24px);
+        }
+
+        @include media('mobile') {
+            font-size: rem(18px);
+            gap: rem(12px);
+            --pic-width: #{rem(30px)};
+        }
 
         &--acc {
             gap: rem(40px);
+            @include media('laptop') {
+                gap: rem(24px);
+            }
+            @include media('mobile') {
+                gap: rem(12px);
+            }
         }
 
         span {
@@ -101,6 +160,7 @@
             }
 
             img {
+                object-fit: contain;
                 position: absolute;
                 left: 0;
                 top: 50%;
@@ -116,6 +176,10 @@
         font: 700 #{rem(30px)} / 124% $ff_base;
         margin-bottom: rem(50px);
         color: $c_accent;
+        @include media('mobile') {
+            font-size: rem(24px);
+            margin-bottom: rem(24px);
+        }
     }
 
     .cta {

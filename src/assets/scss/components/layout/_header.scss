@@ -18,7 +18,7 @@ body:has(.aside-menu.is-open) {
         .header__content {
             background: $c_white;
             @include media('mobile') {
-                border-radius:  0 0 rem(12px) rem(12px);
+                border-radius: 0 0 rem(12px) rem(12px);
             }
         }
         .header__logo {
@@ -76,7 +76,7 @@ body:has(.aside-menu.is-open) {
         justify-content: space-between;
         gap: rem(24px);
         @include media('mobile') {
-            padding-inline: rem(12px);
+            padding-inline: rem(6px);
         }
     }
 
@@ -87,12 +87,24 @@ body:has(.aside-menu.is-open) {
             }
         }
     }
+    &:not(:has(.nav-block)) {
+        .cta {
+            @include media('mobile') {
+                width: auto;
+            }
+        }
+    }
 
     .cta {
         flex-shrink: 0;
         @include media('desktop-lg') {
             font-size: rem(20px);
             padding: rem(18px) rem(20px);
+        }
+
+        @include media('mobile') {
+            padding: rem(12px);
+            font-size: rem(14px);
         }
     }
 
