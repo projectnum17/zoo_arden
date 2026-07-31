@@ -23,13 +23,42 @@
                     <a href="index.html" class="header__logo">
                         <img src="./assets/images/icons/logo.png" alt="Logo">
                     </a>
+                    <nav class="nav-block">
+                        <ul class="nav-block__list">
+                            <li>
+                                <a href="#section-about">Про парк</a>
+                            </li>
+                            <li>
+                                <a href="#section-animals">Тварини</a>
+                            </li>
+                            <li>
+                                <a href="#section-gallery">Галерея</a>
+                            </li>
+                            <li>
+                                <a href="#section-info">Підтримка</a>
+                            </li>
+                            <li>
+                                <a href="#section-info">Прайс</a>
+                            </li>
+                            <li>
+                                <a href="#section-map">Карта</a>
+                            </li>
+                            <li>
+                                <a href="#contacts">Контакти</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <button type="button" class="header__burger js-menu-trigger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                     <a href="tel:+380673134400" class="cta cta--lg">+38 (067) 313-44-00</a>
                 </div>
             </div>
         </header>
         <main class="main">
-
-            <section class="hero">
+            <section class="hero js-hero">
                 <div class="container">
                     <div class="hero__content">
                         <h1 class="section-title">Відкрийте світ дикої природи</h1>
@@ -78,7 +107,7 @@
                     </video>
                 </div>
             </section>
-            <section class="charity">
+            <section class="charity" id="section-about">
                 <div class="container">
                     <div class="charity__content">
                         <div class="charity__pic">
@@ -105,7 +134,7 @@
                                     любов і турбота можуть змінити долю кожної живої істоти.
                                 </p>
                             </div>
-                            <a href="javascript: void(0)" class="link-primary">Благодійний внесок</a>
+                            <a href="shelter.html" class="link-primary">Благодійний внесок</a>
                         </div>
                     </div>
                 </div>
@@ -116,7 +145,7 @@
                     <img src="./assets/images/icons/bg-branch_1.svg" alt="">
                 </div>
             </section>
-            <section class="animals">
+            <section class="animals" id="section-animals">
                 <div class="container">
                     <h2 class="section-subtitle">Познайомтеся з нашими звірями</h2>
                     <div class="bend-slider js-bend-slider">
@@ -247,7 +276,7 @@
                     <img src="./assets/images/tiger.png" alt="">
                 </div>
             </section>
-            <section class="seasons">
+            <section class="seasons" id="section-gallery">
                 <div class="container">
                     <h2 class="section-subtitle">Працюємо у всі сезони</h2>
                 </div>
@@ -283,14 +312,14 @@
                     <div class="donation__content">
                         <p class="donation__headline">КОЖЕН ВІЗИТ — ЦЕ ДОПОМОГА</p>
                         <h2 class="section-subtitle">Станьте частиною доброї справи</h2>
-                        <a href="javascript: void(0)" class="cta">Зробити внесок</a>
+                        <a href="shelter.html" class="cta">Зробити внесок</a>
                     </div>
                 </div>
                 <div class="bg-layer">
                     <img src="./assets/images/bg-donat.png" alt="">
                 </div>
             </section>
-            <section class="information">
+            <section class="information" id="section-info">
                 <div class="container">
                     <h2 class="section-subtitle">Інформація для відвідувачів</h2>
                     <div class="information__head">
@@ -374,11 +403,12 @@
                     <img src="./assets/images/bg-forest.svg" alt="">
                 </div>
             </section>
-            <section class="tour">
+            <section class="tour" id="section-map">
                 <div class="container">
                     <div class="tour__map">
                         <img loading="lazy" decoding="async" src="./assets/images/map.png" alt="Map">
                     </div>
+                    <a download href="./assets/images/map.png" class="cta tablet--visible">Завантажити мапу</a>
                     <div class="tour__includes">
                         <div class="tour__logo">
                             <img loading="lazy" decoding="async" src="./assets/images/icons/logo.png" alt="Logo">
@@ -417,12 +447,15 @@
                                 <p>Екскурсійний супровід</p>
                             </li>
                         </ul>
-                        <a download href="./assets/images/map.png" class="cta">Завантажити мапу</a>
+                        <a download href="./assets/images/map.png" class="cta tablet--hidden">Завантажити мапу</a>
                     </div>
                 </div>
             </section>
+            <div class="sticky-box js-sticky-box">
+                <a href="shelter.html" class="cta">Зробити внесок</a>
+            </div>
         </main>
-        <footer class="footer">
+        <footer class="footer" id="contacts">
             <div class="container">
                 <div class="footer__details">
                     <div class="footer__handlers">
@@ -502,6 +535,39 @@
                 </div>
             </div>
         </footer>
+        <div class="aside-menu js-aside-menu">
+            <div class="aside-menu__box js-aside-box">
+                <div class="nav-block js-nav-block">
+                    <ul class="nav-block__list">
+                        <li>
+                            <a href="#section-about">Про парк</a>
+                        </li>
+                        <li>
+                            <a href="#section-animals">Тварини</a>
+                        </li>
+                        <li>
+                            <a href="#section-gallery">Галерея</a>
+                        </li>
+                        <li>
+                            <a href="#section-info">Підтримка</a>
+                        </li>
+                        <li>
+                            <a href="#section-info">Прайс</a>
+                        </li>
+                        <li>
+                            <a href="#section-map">Карта</a>
+                        </li>
+                        <li>
+                            <a href="#contacts">Контакти</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="tel:+380673134400" class="cta cta--lg">+38 (067) 313-44-00</a>
+                <div class="bg-layer">
+                    <img src="./assets/images/bg-forest.svg" alt="">
+                </div>
+            </div>
+        </div>
     </body>
 
 </html>
