@@ -4,8 +4,20 @@
 
 .animals {
     padding-block: rem(115px) rem(136px);
+    @include media('tablet') {
+        padding-block: rem(96px);
+    }
+    @include media('mobile') {
+        padding-block: rem(56px);
+    }
     .section-subtitle {
         text-align: center;
         margin-bottom: rem(80px);
+        @include media('tablet') {
+            margin-bottom: rem(56px);
+        }
+        @include media('mobile') {
+            margin-bottom: rem(24px);
+        }
     }
 }

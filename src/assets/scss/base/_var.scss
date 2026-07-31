@@ -31,8 +31,21 @@ $gr_accent: linear-gradient(
     --container_pdd: #{rem(20px)};
 }
 
+@include media('laptop') {
+    :root {
+        --header_gap: #{rem(15px)};
+        --header_h: #{rem(87px)};
+    }
+}
+@include media('tablet') {
+    :root {
+        --header_gap: #{rem(5px)};
+    }
+}
+
 @include media('mobile') {
     :root {
         --container_pdd: #{rem(12px)};
+        --header_h: #{rem(68px)};
     }
 }

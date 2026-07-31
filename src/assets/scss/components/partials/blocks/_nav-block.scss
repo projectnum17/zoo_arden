@@ -1,0 +1,33 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.nav-block {
+    max-width: rem(930px);
+    width: 100%;
+    @include media('desktop-lg') {
+        max-width: rem(700px);
+    }
+
+    &__list {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: rem(12px);
+
+        li {
+            font: 700 #{rem(20px)} / 100% $ff_base;
+            &:nth-child(n + 8) {
+                display: none;
+            }
+            @include media('desktop') {
+                font-size: rem(17px);
+            }
+        }
+
+        a {
+            font: inherit;
+        }
+    }
+}

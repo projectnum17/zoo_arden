@@ -2,6 +2,35 @@
 @use '../../base/mixins' as *;
 @use '../../base/media' as *;
 
+body:has(.aside-menu.is-open) {
+    .header {
+        color: $c_text;
+        top: rem(10px);
+
+        @include media('tablet') {
+            top: rem(5px);
+        }
+
+        @include media('mobile') {
+            top: 0;
+        }
+
+        .header__content {
+            background: $c_white;
+            @include media('mobile') {
+                border-radius:  0 0 rem(12px) rem(12px);
+            }
+        }
+        .header__logo {
+            filter: brightness(0);
+        }
+
+        .header__burger span {
+            background: $c_text;
+        }
+    }
+}
+
 .header {
     display: flex;
     align-items: center;
@@ -13,7 +42,7 @@
     transform: translate(-50%, 0);
     width: 100%;
     z-index: 5;
-    color: $bg_body;
+    color: $c_text;
     min-height: var(--header_h);
     @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
     &.is-transform {
@@ -23,11 +52,20 @@
     &.is-colored {
         color: $c_text;
         top: rem(10px);
+
+        @include media('tablet') {
+            top: rem(5px);
+        }
+
         .header__content {
             background: $c_white;
         }
         .header__logo {
             filter: brightness(0);
+        }
+
+        .header__burger span {
+            background: $c_text;
         }
     }
 
@@ -37,6 +75,83 @@
         align-items: center;
         justify-content: space-between;
         gap: rem(24px);
+        @include media('mobile') {
+            padding-inline: rem(12px);
+        }
+    }
+
+    &:has(.nav-block) {
+        .cta {
+            @include media('tablet') {
+                display: none;
+            }
+        }
+    }
+
+    .cta {
+        flex-shrink: 0;
+        @include media('desktop-lg') {
+            font-size: rem(20px);
+            padding: rem(18px) rem(20px);
+        }
+    }
+
+    .nav-block {
+        @include media('tablet') {
+            display: none;
+        }
+    }
+
+    &__burger {
+        display: none;
+
+        @include media('tablet') {
+            display: flex;
+            width: rem(30px);
+            height: rem(30px);
+            position: relative;
+
+            &.is-active {
+                span {
+                    &:nth-child(2) {
+                        width: 0;
+                    }
+                    &:nth-child(1) {
+                        top: rem(14px);
+                        transform: translate(-50%, 0%) rotate(45deg);
+                    }
+                    &:nth-child(3) {
+                        bottom: rem(14px);
+                        transform: translate(-50%, 0%) rotate(-45deg);
+                    }
+                }
+            }
+
+            span {
+                position: absolute;
+                width: 100%;
+                left: 50%;
+                height: 1px;
+                background: $c_text;
+                @include transitions(
+                    0.3s,
+                    cubic-bezier(0.768, 0.304, 0.496, 0.884)
+                );
+
+                &:nth-child(2) {
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+                &:nth-child(1) {
+                    top: rem(8px);
+                    transform: translate(-50%, 0%);
+                }
+                &:nth-child(3) {
+                    bottom: rem(8px);
+                    transform: translate(-50%, 0%);
+                }
+            }
+        }
     }
 
     &__content {
@@ -44,6 +159,13 @@
         padding-block: rem(17px);
         border-radius: rem(122px);
         @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('laptop') {
+            padding-block: rem(12px);
+        }
+        @include media('mobile') {
+            padding-block: rem(8px);
+            border-radius: rem(12px);
+        }
     }
 
     &__logo {
@@ -53,11 +175,22 @@
         img {
             width: 100%;
         }
+        @include media('laptop') {
+            max-width: rem(90px);
+        }
+        @include media('mobile') {
+            max-width: rem(75px);
+        }
     }
 
     &--transparent {
+        color: $bg_body;
         .header__logo {
             filter: none;
+        }
+
+        .header__burger span {
+            background: $c_white;
         }
     }
 }

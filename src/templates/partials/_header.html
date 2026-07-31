@@ -4,6 +4,38 @@
             <a href="index.html" class="header__logo">
                 <img src="./assets/images/icons/logo.png" alt="Logo">
             </a>
+            {{#if nav}}
+            <nav class="nav-block">
+                <ul class="nav-block__list">
+                    <li>
+                        <a href="#section-about">Про парк</a>
+                    </li>
+                    <li>
+                        <a href="#section-animals">Тварини</a>
+                    </li>
+                    <li>
+                        <a href="#section-gallery">Галерея</a>
+                    </li>
+                    <li>
+                        <a href="#section-info">Підтримка</a>
+                    </li>
+                    <li>
+                        <a href="#section-info">Прайс</a>
+                    </li>
+                    <li>
+                        <a href="#section-map">Карта</a>
+                    </li>
+                    <li>
+                        <a href="#contacts">Контакти</a>
+                    </li>
+                </ul>
+            </nav>
+            <button type="button" class="header__burger js-menu-trigger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            {{/if}}
             <a href="tel:+380673134400" class="cta cta--lg">+38 (067) 313-44-00</a>
         </div>
     </div>

@@ -12,22 +12,34 @@
         font: 700 #{rem(30px)} / 111% $ff_sec;
         text-transform: uppercase;
         margin-bottom: rem(10px);
+        @include media('mobile') {
+            font-size: rem(22px);
+        }
     }
 
     &__subtitle {
         font: 700 #{rem(20px)} / 101% $ff_base;
         text-transform: uppercase;
         color: $c_accent;
+        @include media('mobile') {
+            font-size: rem(18px);
+        }
     }
 
     &__connect {
         font: 400 #{rem(18px)} / 100% $ff_base;
+        @include media('mobile') {
+            font-size: rem(16px);
+        }
     }
 
     &__contacts {
         display: flex;
         gap: rem(40px);
         flex-wrap: wrap;
+        @include media('mobile') {
+            gap: rem(24px);
+        }
     }
 
     &__road {
@@ -58,6 +70,9 @@
         align-items: center;
         gap: rem(5px);
         flex-wrap: wrap;
+        @include media('mobile') {
+            font-size: rem(16px);
+        }
         * {
             text-decoration: underline;
         }
@@ -67,6 +82,9 @@
         display: flex;
         flex-direction: column;
         gap: rem(40px);
+        @include media('mobile') {
+            gap: rem(28px);
+        }
     }
 
     &__address,
@@ -74,6 +92,9 @@
         display: flex;
         flex-direction: column;
         gap: rem(16px);
+        @include media('mobile') {
+            gap: rem(10px);
+        }
     }
 
     &__bg {
@@ -92,12 +113,21 @@
         padding-block: rem(30px);
         background: $c_salad;
         color: #00000080;
+        @include media('mobile') {
+            font-size: rem(14px);
+            padding-block: rem(18px);
+            text-align: center;
+        }
 
         .container {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: rem(24px);
+            @include media('mobile') {
+                flex-direction: column;
+                gap: rem(12px);
+            }
         }
     }
 
@@ -111,6 +141,11 @@
         justify-content: space-between;
         gap: rem(24px);
         padding-block: rem(100px) rem(110px);
+        @include media('mobile') {
+            max-width: 100%;
+            padding-block: rem(56px);
+            flex-direction: column-reverse;
+        }
     }
 
     &__handlers {
@@ -124,6 +159,13 @@
         flex-direction: column;
         gap: rem(18px);
         padding-inline: rem(8px);
+        @include media('mobile') {
+            padding: 0;
+            gap: rem(12px);
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
 
         li {
             display: inline-flex;
@@ -138,6 +180,10 @@
             );
             @include hover {
                 transform: scale(1.05);
+            }
+            @include media('mobile') {
+                width: rem(32px);
+                height: rem(32px);
             }
             svg {
                 width: 100%;
@@ -156,6 +202,11 @@
         height: rem(64px);
         background: $c_green;
         color: $c_white;
+        @include media('mobile') {
+            margin-left: auto;
+            width: rem(42px);
+            height: rem(42px);
+        }
 
         @include hover {
             svg {
@@ -170,6 +221,9 @@
                 0.3s,
                 cubic-bezier(0.768, 0.304, 0.496, 0.884)
             );
+            @include media('mobile') {
+                width: rem(16px);
+            }
         }
     }
 }

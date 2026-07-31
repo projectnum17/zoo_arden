@@ -19,6 +19,10 @@
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
     color: $c_green;
     @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    @include media('mobile') {
+        border-radius: rem(12px);
+        padding: rem(16px) rem(12px);
+    }
 
     &__close {
         top: rem(19px);
@@ -27,6 +31,14 @@
         width: rem(18px);
         height: rem(18px);
         color: #000;
+        @include media('tablet') {
+            width: rem(16px);
+            height: rem(16px);
+        }
+        @include media('mobile') {
+            top: rem(12px);
+            right: rem(12px);
+        }
 
         svg {
             width: 100%;
@@ -41,10 +53,26 @@
         text-align: center;
         gap: rem(15px);
         margin-bottom: rem(25px);
+        @include media('tablet') {
+            margin-bottom: rem(18px);
+            gap: rem(12px);
+        }
+        @include media('mobile') {
+            gap: rem(8px);
+            margin-bottom: rem(12px);
+        }
 
         svg {
             width: rem(48px);
             height: rem(48px);
+            @include media('tablet') {
+                width: rem(32px);
+                height: rem(32px);
+            }
+            @include media('mobile') {
+                width: rem(24px);
+                height: rem(24px);
+            }
         }
     }
 
@@ -53,6 +81,9 @@
         text-transform: lowercase;
         display: inline-flex;
         color: $c_text;
+        @include media('mobile') {
+            font-size: rem(14px);
+        }
 
         &--underline {
             position: relative;
@@ -71,6 +102,12 @@
 
     &__time {
         font: 700 #{rem(40px)} / 100% $ff_sec;
+        @include media('tablet') {
+            font-size: rem(32px);
+        }
+        @include media('mobile') {
+            font-size: rem(24px);
+        }
     }
 
     &__content {
@@ -84,6 +121,10 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: rem(10px);
+        width: 100%;
+        @include media('mobile') {
+            gap: rem(6px);
+        }
     }
 
     &__subtext {
@@ -115,6 +156,9 @@
     &__price {
         font: 700 #{rem(30px)} / 100% $ff_sec;
         margin-bottom: rem(3px);
+        @include media('mobile') {
+            font-size: rem(24px);
+        }
     }
 
     &__label {

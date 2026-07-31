@@ -5,9 +5,33 @@
 .section-title {
     font: 700 #{rem(100px)} / 100% $ff_sec;
     text-transform: uppercase;
+    @include media('desktop') {
+        font-size: rem(80px);
+    }
+    @include media('laptop') {
+        font-size: rem(68px);
+    }
+    @include media('tablet') {
+        font-size: rem(56px);
+    }
+    @include media('mobile') {
+        font-size: rem(40px);
+    }
 }
 
 .section-subtitle {
     font: 700 #{rem(70px)} / 100% $ff_sec;
     text-transform: uppercase;
+    @include media('desktop') {
+        font-size: rem(60px);
+    }
+    @include media('laptop') {
+        font-size: rem(52px);
+    }
+    @include media('tablet') {
+        font-size: rem(44px);
+    }
+    @include media('mobile') {
+        font-size: rem(32px);
+    }
 }

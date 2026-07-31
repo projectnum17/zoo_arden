@@ -1,0 +1,19 @@
+@use '../../base/var' as *;
+@use '../../base/mixins' as *;
+@use '../../base/media' as *;
+
+.sticky-box {
+    position: sticky;
+    bottom: 0;
+    padding-block: rem(12px);
+    display: flex;
+    z-index: 2;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    transform: translateY(100%);
+    @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    &.is-visible {
+        transform: translateY(0);
+    }
+}

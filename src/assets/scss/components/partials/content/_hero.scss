@@ -8,8 +8,11 @@
     min-height: 100svh;
     display: flex;
     padding-block: rem(150px) rem(40px);
-
     --aspect-box: #{rem(333px)};
+
+    @include media('mobile') {
+        padding-block: rem(200px) rem(24px);
+    }
 
     .bg-layer {
         &::after {
@@ -29,11 +32,20 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
+        @include media('mobile') {
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
     }
 
     .section-title {
         max-width: rem(1100px);
         color: $bg_body;
+        @include media('mobile') {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
     }
 
     .schedule-box {
@@ -44,15 +56,38 @@
         transform: translateX(100%);
         opacity: 0;
         visibility: hidden;
+        @include media('tablet') {
+            bottom: 0;
+        }
+        @include media('mobile') {
+            margin-top: auto;
+            position: relative;
+            max-width: 100%;
+            width: 100%;
+            transform: translate(0, 10%);
+            right: auto;
+        }
 
         &.is-show {
             transform: translateX(0);
             opacity: 1;
             visibility: visible;
+            @include media('mobile') {
+                transform: translate(0, 0);
+            }
         }
     }
 
     &__content {
         max-width: calc(100% - var(--aspect-box) - #{rem(24px)});
+        @include media('mobile') {
+            max-width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            gap: rem(12px);
+        }
     }
 }

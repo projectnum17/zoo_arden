@@ -23,6 +23,12 @@ section:has(.bend-slider) {
         gap: rem(30px);
         font: 400 #{rem(22px)} / 100% $ff_base;
 
+        @include media('mobile') {
+            padding-top: rem(56px);
+            gap: rem(18px);
+            font-size: rem(18px);
+        }
+
         &:has(.swiper-button-lock) {
             display: none;
         }
@@ -41,9 +47,12 @@ section:has(.bend-slider) {
         border-radius: 999px;
         background: $gr_accent;
         @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            height: rem(38px);
+        }
 
         &.swiper-button-disabled {
-            opacity: .5;
+            opacity: 0.5;
             pointer-events: none;
         }
 

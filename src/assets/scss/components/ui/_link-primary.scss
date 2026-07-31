@@ -16,4 +16,9 @@
     @include hover {
         transform: scale(0.99);
     }
+    @include media('mobile') {
+        font-size: rem(16px);
+        width: 100%;
+        padding: rem(18px);
+    }
 }

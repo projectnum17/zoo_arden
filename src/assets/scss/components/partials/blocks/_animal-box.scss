@@ -10,6 +10,10 @@
     overflow: hidden;
     border-radius: rem(40px);
     color: $c_white;
+    @include media('mobile') {
+        max-width: rem(320px);
+        border-radius: rem(16px);
+    }
 
     &::after {
         content: '';
@@ -27,6 +31,7 @@
         height: 100%;
         object-fit: cover;
     }
+
     &__content {
         display: flex;
         flex-direction: column;
@@ -39,14 +44,23 @@
         width: 100%;
         gap: rem(11px);
         padding: rem(46px) rem(54px);
+        @include media('mobile') {
+            padding: rem(24px);
+        }
     }
 
     &__title {
         font: 700 #{rem(40px)} / 100% $ff_sec;
         text-transform: uppercase;
+        @include media('mobile') {
+            font-size: rem(24px);
+        }
     }
 
     &__info {
         font: 400 #{rem(18px)} / 100% $ff_base;
+        @include media('mobile') {
+            font-size: rem(16px);
+        }
     }
 }

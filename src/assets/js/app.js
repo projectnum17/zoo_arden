@@ -102,10 +102,60 @@ const initHeader = () => {
             ? header.classList.add('is-transform')
             : header.classList.remove('is-transform');
 
+        document.documentElement.style.scrollPaddingTop =
+            header.classList.contains('is-transform') ? '0px' : '50px';
+
         lastScroll = currentScroll;
     };
+
     window.addEventListener('scroll', handleScroll);
     handleScroll();
+
+    const initAsideMenu = () => {
+        const screenWidth = window.innerWidth > 991.98;
+        if (screenWidth) return;
+
+        const menuTrigger = header.querySelector('.js-menu-trigger');
+        const asideMenu = document.querySelector('.js-aside-menu');
+        if (!asideMenu || !menuTrigger) return;
+
+        const anchors = document.querySelectorAll('.js-nav-block a');
+        if (!anchors.length) return;
+
+        const openState = () => {
+            menuTrigger.classList.add('is-active');
+            asideMenu.classList.add('is-open');
+            document.body.classList.add('is-locked');
+        };
+
+        const closeState = () => {
+            menuTrigger.classList.remove('is-active');
+            asideMenu.classList.remove('is-open');
+            document.body.classList.remove('is-locked');
+        };
+
+        menuTrigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+
+            asideMenu.classList.contains('is-open')
+                ? closeState()
+                : openState();
+        });
+
+        asideMenu.addEventListener('click', (e) => {
+            if (e.target === asideMenu) closeState();
+        });
+
+        anchors.forEach((anchor) => {
+            anchor.addEventListener('click', (e) => {
+                closeState();
+            });
+        });
+
+        window.addEventListener('resize', closeState);
+    };
+
+    initAsideMenu();
 };
 
 const initRotateBlocks = () => {
@@ -157,7 +207,7 @@ const initBendSliders = () => {
         new Swiper(slider, {
             speed: 900,
             slidesPerView: 'auto',
-            spaceBetween: 70,
+            spaceBetween: 30,
             centeredSlides: true,
             grabCursor: true,
             navigation: {
@@ -169,6 +219,11 @@ const initBendSliders = () => {
                 type: 'custom',
                 renderCustom(swiper, current, total) {
                     return `${current}/${total}`;
+                },
+            },
+            breakpoints: {
+                768: {
+                    spaceBetween: 70,
                 },
             },
         });
@@ -231,6 +286,22 @@ const initCopyInfo = () => {
     });
 };
 
+const initStickyCTA = () => {
+    const hero = document.querySelector('.js-hero');
+    const cta = document.querySelector('.js-sticky-box');
+
+    if (!hero || !cta) return;
+
+    const handleScroll = () => {
+        const currentScroll = window.scrollY;
+
+        cta.classList.toggle('is-visible', currentScroll > 70);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     initHeader();
     initVideoAutoplay();
@@ -240,4 +311,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initReviewsSliders();
     initRotateBlocks();
     initCopyInfo();
+    initStickyCTA();
 });

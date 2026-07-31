@@ -7,9 +7,22 @@
     position: relative;
     overflow: hidden;
 
+    @include media('laptop') {
+        padding-block: rem(96px);
+    }
+    @include media('mobile') {
+        padding-block: rem(56px);
+    }
+
     .section-subtitle {
         text-align: center;
         margin-bottom: rem(121px);
+        @include media('laptop') {
+            margin-bottom: rem(56px);
+        }
+        @include media('mobile') {
+            margin-bottom: rem(24px);
+        }
     }
 
     .cta {
@@ -18,9 +31,20 @@
 
     &__head {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        flex-wrap: wrap;
         gap: rem(24px);
         margin-bottom: rem(50px);
+        .info-card {
+            max-width: 100%;
+        }
+        @include media('tablet') {
+            flex-direction: column;
+        }
+        @include media('mobile') {
+            margin-bottom: rem(12px);
+            gap: rem(12px);
+        }
     }
 
     &__foot {
@@ -28,6 +52,10 @@
         justify-content: space-between;
         align-items: center;
         gap: rem(24px);
+        @include media('laptop') {
+            flex-direction: column;
+            gap: rem(12px);
+        }
     }
 
     &__connect {
@@ -35,11 +63,22 @@
         flex-direction: column;
         gap: rem(30px);
         align-items: center;
+        @include media('laptop') {
+            order: 3;
+        }
+        @include media('mobile') {
+            gap: rem(12px);
+            width: 100%;
+            padding-top: rem(12px);
+        }
     }
 
     &__phone {
         font: 700 #{rem(30px)} / 100% $ff_sec;
         color: $c_green;
+        @include media('mobile') {
+            font-size: rem(24px);
+        }
     }
 }
 
@@ -60,6 +99,15 @@
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.4);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+    @include media('laptop') {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    @include media('mobile') {
+        padding: rem(16px);
+        border-radius: rem(12px);
+    }
 
     &__title {
         font: 700 #{rem(35px)} / 101% $ff_base;
@@ -67,17 +115,31 @@
         text-align: center;
         margin-bottom: rem(30px);
         color: $c_accent;
+        @include media('tablet') {
+            font-size: rem(24px);
+            margin-bottom: rem(24px);
+        }
+        @include media('mobile') {
+            margin-bottom: rem(18px);
+            font-size: rem(18px);
+        }
     }
 
     &__subtitle {
         font: 700 #{rem(20px)} / 111% $ff_sec;
         text-align: center;
         color: $c_green;
+        @include media('mobile') {
+            font-size: rem(14px);
+        }
     }
 
     &__text {
         font: 400 #{rem(24px)} / 100% $ff_base;
         text-transform: lowercase;
+        @include media('mobile') {
+            font-size: rem(16px);
+        }
     }
 
     &__schedule {
@@ -88,6 +150,11 @@
         gap: rem(20px);
         padding: rem(24px) rem(32px);
         border-radius: rem(11px);
+        @include media('mobile') {
+            border-radius: rem(12px);
+            padding: rem(16px);
+            gap: rem(12px);
+        }
     }
 
     &__hours {
@@ -97,9 +164,15 @@
         flex-direction: column;
         gap: rem(27px);
         color: $c_accent;
+        @include media('mobile') {
+            line-height: 100%;
+            font-size: rem(28px);
+            gap: rem(14px);
+        }
 
         &::after {
             content: '';
+            pointer-events: none;
             width: rem(30px);
             height: rem(4px);
             position: absolute;
@@ -107,11 +180,19 @@
             top: 50%;
             transform: translate(-50%, -50%);
             background: $c_accent;
+            @include media('mobile') {
+                height: rem(3px);
+                width: rem(20px);
+            }
         }
     }
 
     &__boxes {
         display: grid;
+        @include media('mobile') {
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     &__price {
@@ -122,8 +203,20 @@
         text-align: center;
         padding: rem(55px) rem(18px) rem(17px);
 
+        @include media('tablet') {
+            padding: rem(36px) rem(16px);
+        }
+        @include media('mobile') {
+            padding: rem(16px);
+            border-radius: rem(12px);
+        }
+
         .info-card__text {
             margin-bottom: rem(12px);
+        }
+
+        *:last-child {
+            margin-bottom: 0;
         }
     }
 
@@ -131,12 +224,21 @@
         font: 700 #{rem(50px)} / 100% $ff_sec;
         margin-bottom: rem(3px);
         color: $c_green;
+        @include media('tablet') {
+            font-size: rem(32px);
+        }
+        @include media('mobile') {
+            font-size: rem(24px);
+        }
     }
 
     &__label {
         font: 400 #{rem(20px)} / 100% $ff_base;
         text-transform: lowercase;
         color: #00000066;
+        @include media('mobile') {
+            font-size: rem(16px);
+        }
     }
 
     &__reminder {
@@ -145,6 +247,12 @@
         margin-bottom: rem(30px);
         padding: rem(19px);
         color: #000000cc;
+        @include media('mobile') {
+            font-size: rem(16px);
+            padding: rem(12px);
+            border-radius: rem(10px);
+            margin-bottom: rem(24px);
+        }
     }
 
     .u-light {
@@ -159,6 +267,9 @@
         .info-card__boxes {
             grid-template-columns: repeat(2, 1fr);
             gap: rem(25px);
+            @include media('mobile') {
+                gap: rem(12px);
+            }
         }
     }
 
@@ -166,6 +277,9 @@
         .info-card__boxes {
             grid-template-columns: repeat(3, 1fr);
             gap: rem(17px);
+            @include media('mobile') {
+                gap: rem(12px);
+            }
         }
     }
 
@@ -176,15 +290,24 @@
         flex-direction: row;
         align-items: center;
         gap: rem(24px);
+        font: 400 #{rem(18px)} / 100% $ff_base;
+        text-transform: lowercase;
+        @include media('laptop') {
+            justify-content: flex-start;
+        }
+        @include media('mobile') {
+            border-radius: rem(12px);
+            padding: rem(16px);
+            font-size: rem(16px);
+        }
 
         img {
             width: rem(60px);
             height: rem(60px);
-        }
-
-        p {
-            font: 400 #{rem(18px)} / 100% $ff_base;
-            text-transform: lowercase;
+            @include media('mobile') {
+                width: rem(42px);
+                height: rem(42px);
+            }
         }
     }
 }
