@@ -5,12 +5,10 @@
 .sticky-box {
     position: sticky;
     bottom: 0;
-    padding-block: rem(12px);
+    padding: rem(12px);
     display: flex;
     z-index: 2;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
     transform: translateY(100%);
     @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
     &.is-visible {

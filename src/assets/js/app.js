@@ -302,6 +302,28 @@ const initStickyCTA = () => {
     handleScroll();
 };
 
+const initFancyBoxes = () => {
+    const boxes = document.querySelectorAll('.js-season-card');
+    if (!boxes.length) return;
+    boxes.forEach((card) => {
+        card.addEventListener('click', () => {
+            const images = JSON.parse(card.dataset.images);
+
+            Fancybox.show(
+                images.map((src) => ({
+                    src,
+                    type: 'image',
+                })),
+                {
+                    Images: {
+                        initialSize: 'fit',
+                    },
+                },
+            );
+        });
+    });
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     initHeader();
     initVideoAutoplay();
@@ -312,4 +334,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initRotateBlocks();
     initCopyInfo();
     initStickyCTA();
+    initFancyBoxes();
 });

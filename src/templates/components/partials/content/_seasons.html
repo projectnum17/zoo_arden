@@ -4,9 +4,38 @@
     </div>
     <div class="seasons__container">
         <div class="seasons__boxes">
-            {{#each seasons.data}}
-            {{> _seasonBox this}}
-            {{/each}}
+            <div class="season-box js-rotate-card js-season-card" data-images='[
+                "./assets/images/season_1.png",
+                "./assets/images/season_2.png",
+                "./assets/images/season_3.png"
+            ]'>
+                <img src="./assets/images/season_1.png" alt="">
+                <p class="season-box__title">зима</p>
+            </div>
+            <div class="season-box js-rotate-card js-season-card" data-images='[
+                "./assets/images/season_2.png",
+                "./assets/images/season_1.png",
+                "./assets/images/season_3.png"
+            ]'>
+                <img src="./assets/images/season_2.png" alt="">
+                <p class="season-box__title">весна</p>
+            </div>
+            <div class="season-box js-rotate-card js-season-card" data-images='[
+                "./assets/images/tiger.png",
+                "./assets/images/shelter.png",
+                "./assets/images/season_3.png"
+            ]'>
+                <img src="./assets/images/season_3.png" alt="">
+                <p class="season-box__title">Літо</p>
+            </div>
+            <div class="season-box js-rotate-card js-season-card" data-images='[
+                "./assets/images/season_3.png",
+                "./assets/images/tiger.png",
+                "./assets/images/shelter.png"
+            ]'>
+                <img src="./assets/images/season_4.png" alt="">
+                <p class="season-box__title">Осінь</p>
+            </div>
         </div>
     </div>
     <div class="bg-brach bg-brach--l">

@@ -3,6 +3,7 @@
 @use '../../../base/media' as *;
 
 .season-box {
+    cursor: pointer;
     max-width: rem(421px);
     aspect-ratio: 421 / 535;
     height: 100%;
@@ -16,6 +17,11 @@
         max-width: rem(320px);
         border-radius: rem(16px);
         font-size: rem(24px);
+    }
+    @include hover {
+        img {
+            transform: scale(1.15);
+        }
     }
 
     &::after {
@@ -36,6 +42,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
     }
 
     &__title {
