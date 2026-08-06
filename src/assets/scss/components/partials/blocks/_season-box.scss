@@ -13,6 +13,10 @@
     font: 700 #{rem(40px)} / 100% $ff_sec;
     text-transform: uppercase;
     color: $c_white;
+    @include media('desktop') {
+        border-radius: rem(24px);
+        font-size: rem(32px);
+    }
     @include media('mobile') {
         max-width: rem(320px);
         border-radius: rem(16px);

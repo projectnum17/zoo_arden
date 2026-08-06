@@ -4,6 +4,7 @@
 
 .donation {
     padding-block: rem(275px);
+    overflow: hidden;
     position: relative;
 
     @include media('laptop') {
@@ -14,12 +15,52 @@
         padding-block: rem(96px);
     }
     @include media('mobile') {
-        padding-block: rem(56px);
+        padding-block: rem(56px) rem(320px);
+    }
+
+    &__bg {
+        mix-blend-mode: multiply;
+        position: absolute;
+        max-width: rem(822px);
+        bottom: 0;
+
+        @include media('laptop') {
+            max-width: rem(400px);
+        }
+
+        @include media('mobile') {
+            max-width: rem(298px);
+            height: rem(304px);
+            img {
+                object-fit: contain;
+                height: 100%;
+            }
+        }
+
+        &--l {
+            left: 0;
+            transform: translateX(-40%);
+            @include media('desktop-lg') {
+                transform: translateX(-55%);
+            }
+            @include media('mobile') {
+                transform: translateX(-25%);
+            }
+        }
+
+        &--r {
+            right: 0;
+            transform: translateX(40%);
+            @include media('desktop-lg') {
+                transform: translateX(55%);
+            }
+            @include media('mobile') {
+                transform: translateX(25%);
+            }
+        }
     }
 
     &__content {
-        border-radius: rem(20px);
-        backdrop-filter: blur(10px);
         padding: rem(20px);
         max-width: rem(967px);
         margin: 0 auto;
@@ -28,6 +69,9 @@
         gap: rem(30px);
         align-items: center;
         text-align: center;
+        @include media('desktop') {
+            max-width: rem(650px);
+        }
         @include media('mobile') {
             gap: rem(24px);
             border-radius: rem(16px);
