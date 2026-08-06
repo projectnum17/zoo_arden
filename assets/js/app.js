@@ -159,37 +159,29 @@ const initHeader = () => {
 };
 
 const initRotateBlocks = () => {
-    const blocks = document.querySelectorAll('.js-rotate-card');
-    if (!blocks.length) return;
+    const liveBlocks = document.getElementsByClassName('js-rotate-card');
+    if (!liveBlocks.length) return;
 
     const multiplier = {
         translate: 0.2,
         rotate: 0.01,
     };
 
-    const calculators = [];
+    const raf = () => {
+        const screenCenterX = window.innerWidth * 0.5;
 
-    blocks.forEach((box) => {
-        calculators.push(() => {
+        for (let i = 0; i < liveBlocks.length; i++) {
+            const box = liveBlocks[i];
             const rect = box.getBoundingClientRect();
-            const r = window.innerWidth * 0.5 - (rect.x + rect.width * 0.5);
 
-            let ty =
-                Math.abs(r) * multiplier.translate -
-                rect.width * multiplier.translate;
+            const r = screenCenterX - (rect.left + rect.width * 0.5);
 
+            let ty = Math.abs(r) * multiplier.translate - rect.width * multiplier.translate;
             if (ty < 0) ty = 0;
 
-            box.style.transform = `translateY(${ty}px) rotate(${
-                -r * multiplier.rotate
-            }deg)`;
+            box.style.transform = `translate3d(0, ${ty}px, 0) rotate(${-r * multiplier.rotate}deg)`;
+        }
 
-            box.style.transformOrigin = r < 0 ? 'left top' : 'right top';
-        });
-    });
-
-    const raf = () => {
-        calculators.forEach((calculate) => calculate());
         requestAnimationFrame(raf);
     };
 
@@ -210,6 +202,8 @@ const initBendSliders = () => {
             spaceBetween: 30,
             centeredSlides: true,
             grabCursor: true,
+            loop: true,
+            loopedSlides: 5, // Клонируем слайды с запасом, чтобы убрать скачки при бесконечном скролле
             navigation: {
                 prevEl: box.querySelector('.js-bend-prev'),
                 nextEl: box.querySelector('.js-bend-next'),
@@ -229,6 +223,78 @@ const initBendSliders = () => {
         });
     });
 };
+
+// const initRotateBlocks = () => {
+//     // getElementsByClassName возвращает "живую" коллекцию.
+//     // Если Swiper склонирует слайды, они моментально появятся в этом списке.
+//     const liveBlocks = document.getElementsByClassName('js-rotate-card');
+//     if (!liveBlocks.length) return;
+
+//     const multiplier = {
+//         translate: 0.2,
+//         rotate: 0.01,
+//     };
+
+//     const raf = () => {
+//         // Перебираем элементы напрямую в каждом кадре
+//         for (let i = 0; i < liveBlocks.length; i++) {
+//             const box = liveBlocks[i];
+//             const rect = box.getBoundingClientRect();
+
+//             const r = window.innerWidth * 0.5 - (rect.x + rect.width * 0.5);
+
+//             let ty =
+//                 Math.abs(r) * multiplier.translate -
+//                 rect.width * multiplier.translate;
+
+//             if (ty < 0) ty = 0;
+
+//             // Применяем стили
+//             box.style.transform = `translateY(${ty}px) rotate(${-r * multiplier.rotate}deg)`;
+//             box.style.transformOrigin = r < 0 ? 'left top' : 'right top';
+//         }
+
+//         requestAnimationFrame(raf);
+//     };
+
+//     raf();
+// };
+
+// const initBendSliders = () => {
+//     if (typeof Swiper === 'undefined') return;
+//     const sliderBoxes = document.querySelectorAll('.js-bend-slider');
+//     if (!sliderBoxes.length) return;
+
+//     sliderBoxes.forEach((box) => {
+//         const slider = box.querySelector('.swiper');
+
+//         new Swiper(slider, {
+//             speed: 900,
+//             slidesPerView: 'auto',
+//             spaceBetween: 30,
+//             centeredSlides: true,
+//             grabCursor: true,
+//             loop: true,
+//             loopedSlides: 5,
+//             navigation: {
+//                 prevEl: box.querySelector('.js-bend-prev'),
+//                 nextEl: box.querySelector('.js-bend-next'),
+//             },
+//             pagination: {
+//                 el: box.querySelector('.js-bend-pag'),
+//                 type: 'custom',
+//                 renderCustom(swiper, current, total) {
+//                     return `${current}/${total}`;
+//                 },
+//             },
+//             breakpoints: {
+//                 768: {
+//                     spaceBetween: 70,
+//                 },
+//             },
+//         });
+//     });
+// };
 
 const initReviewsSliders = () => {
     if (typeof Swiper === 'undefined') return;

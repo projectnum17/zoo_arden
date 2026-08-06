@@ -923,7 +923,7 @@ body:has(.header.is-transform) .aside-menu__box {
   padding-inline: var(--container_pdd);
   padding-bottom: 13.75rem;
   display: flex;
-  gap: 4.375rem;
+  gap: 2.5rem;
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -937,19 +937,35 @@ body:has(.header.is-transform) .aside-menu__box {
 }
 
 .seasons__boxes .season-box {
+  flex: 1;
   flex-shrink: 0;
   scroll-snap-align: center;
 }
 
 .donation {
   padding-block: 17.1875rem;
+  overflow: hidden;
   position: relative;
 }
 
+.donation__bg {
+  mix-blend-mode: multiply;
+  position: absolute;
+  max-width: 51.375rem;
+  bottom: 0;
+}
+
+.donation__bg--l {
+  left: 0;
+  transform: translateX(-40%);
+}
+
+.donation__bg--r {
+  right: 0;
+  transform: translateX(40%);
+}
+
 .donation__content {
-  border-radius: 1.25rem;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
   padding: 1.25rem;
   max-width: 60.4375rem;
   margin: 0 auto;
@@ -1683,6 +1699,14 @@ section:has(.bend-slider) {
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.8) 100%);
   }
 
+  .donation__bg--l {
+    transform: translateX(-55%);
+  }
+
+  .donation__bg--r {
+    transform: translateX(55%);
+  }
+
   .nav-block {
     max-width: 43.75rem;
   }
@@ -1697,8 +1721,22 @@ section:has(.bend-slider) {
     font-size: 3.75rem;
   }
 
+  .seasons__boxes {
+    gap: 1.875rem;
+    padding-bottom: 7.5rem;
+  }
+
+  .donation__content {
+    max-width: 40.625rem;
+  }
+
   .shelter__details {
     padding-top: 0;
+  }
+
+  .season-box {
+    border-radius: 1.5rem;
+    font-size: 2rem;
   }
 
   .nav-block__list li {
@@ -1752,12 +1790,23 @@ section:has(.bend-slider) {
     padding-block: 7rem 0;
   }
 
+  .seasons__boxes .season-box {
+    flex-grow: 0;
+    flex-basis: auto;
+    flex-shrink: 0;
+  }
+
   .seasons__boxes {
+    gap: 3.125rem;
     padding-bottom: 7rem;
   }
 
   .donation {
     padding-block: 7rem;
+  }
+
+  .donation__bg {
+    max-width: 25rem;
   }
 
   .information {
@@ -2315,7 +2364,26 @@ section:has(.bend-slider) {
   }
 
   .donation {
-    padding-block: 3.5rem;
+    padding-block: 3.5rem 20rem;
+  }
+
+  .donation__bg {
+    max-width: 18.625rem;
+    height: 19rem;
+  }
+
+  .donation__bg img {
+    -o-object-fit: contain;
+    object-fit: contain;
+    height: 100%;
+  }
+
+  .donation__bg--l {
+    transform: translateX(-25%);
+  }
+
+  .donation__bg--r {
+    transform: translateX(25%);
   }
 
   .donation__content {
