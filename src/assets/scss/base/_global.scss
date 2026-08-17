@@ -4,7 +4,6 @@
 
 html {
     font-size: 16px;
-    // scroll-padding-top: calc(var(--header_h) + #{rem(50px)});
     scroll-padding-top: rem(20px);
 }
 
@@ -17,7 +16,7 @@ body {
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
-    background: $bg_body;
+    background: $bg_body_upd;
     color: $c_text;
 
     &.is-locked {

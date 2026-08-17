@@ -111,7 +111,7 @@
     &__terms {
         font: 400 #{rem(18px)} / 100% $ff_base;
         padding-block: rem(30px);
-        background: $c_salad;
+        background: #6fb46c;
         color: #00000080;
         @include media('mobile') {
             font-size: rem(14px);

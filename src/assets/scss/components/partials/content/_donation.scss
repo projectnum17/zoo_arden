@@ -3,7 +3,7 @@
 @use '../../../base/media' as *;
 
 .donation {
-    padding-block: rem(275px);
+    padding-block: rem(120px);
     overflow: hidden;
     position: relative;
 
@@ -19,14 +19,12 @@
     }
 
     &__bg {
-        mix-blend-mode: multiply;
         position: absolute;
-        max-width: rem(822px);
         bottom: 0;
+        --donation_gutter: calc((100vw - 60.4375rem) / 2);
+        width: clamp(16.25rem, var(--donation_gutter) - 1rem, 35rem);
+        max-width: none;
 
-        @include media('laptop') {
-            max-width: rem(400px);
-        }
 
         @include media('mobile') {
             max-width: rem(298px);
@@ -39,29 +37,14 @@
 
         &--l {
             left: 0;
-            transform: translateX(-40%);
-            @include media('desktop-lg') {
-                transform: translateX(-55%);
-            }
-            @include media('mobile') {
-                transform: translateX(-25%);
-            }
         }
 
         &--r {
             right: 0;
-            transform: translateX(40%);
-            @include media('desktop-lg') {
-                transform: translateX(55%);
-            }
-            @include media('mobile') {
-                transform: translateX(25%);
-            }
         }
     }
 
     &__content {
-        padding: rem(20px);
         max-width: rem(967px);
         margin: 0 auto;
         display: flex;
@@ -74,7 +57,6 @@
         }
         @include media('mobile') {
             gap: rem(24px);
-            border-radius: rem(16px);
         }
     }
 

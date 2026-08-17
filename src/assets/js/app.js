@@ -195,7 +195,6 @@ const initRotateBlocks = () => {
 
     raf();
 };
-
 const initBendSliders = () => {
     if (typeof Swiper === 'undefined') return;
     const sliderBoxes = document.querySelectorAll('.js-bend-slider');
@@ -203,13 +202,36 @@ const initBendSliders = () => {
 
     sliderBoxes.forEach((box) => {
         const slider = box.querySelector('.swiper');
+        const wrapper = box.querySelector('.swiper-wrapper');
+        if (!wrapper) return;
+
+        const slides = wrapper.querySelectorAll('.swiper-slide');
+        const minSlidesRequired = 8;
+
+        if (slides.length > 0 && slides.length < minSlidesRequired) {
+            const initialCount = slides.length;
+            let currentCount = initialCount;
+
+            while (currentCount < minSlidesRequired) {
+                slides.forEach((slide) => {
+                    const clone = slide.cloneNode(true);
+                    wrapper.appendChild(clone);
+                });
+                currentCount += initialCount;
+            }
+        }
 
         new Swiper(slider, {
             speed: 900,
             slidesPerView: 'auto',
-            spaceBetween: 30,
             centeredSlides: true,
+            loop: true,
+            loopedSlides: 6,
+            spaceBetween: 30,
             grabCursor: true,
+            observer: true,
+            observeParents: true,
+
             navigation: {
                 prevEl: box.querySelector('.js-bend-prev'),
                 nextEl: box.querySelector('.js-bend-next'),
@@ -217,8 +239,10 @@ const initBendSliders = () => {
             pagination: {
                 el: box.querySelector('.js-bend-pag'),
                 type: 'custom',
-                renderCustom(swiper, current, total) {
-                    return `${current}/${total}`;
+                renderCustom(swiper) {
+                    const realTotal = slides.length;
+                    const realCurrent = (swiper.realIndex % realTotal) + 1;
+                    return `${realCurrent}/${realTotal}`;
                 },
             },
             breakpoints: {
